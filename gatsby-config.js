@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-google-docs",
       options: {

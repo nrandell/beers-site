@@ -14,6 +14,8 @@ interface Props {
 
 const Index: React.FC<Props> = props => {
   const { data } = props
+  const html = data.googleDocs.childMarkdownRemark.html
+  const cleanedHtml = html.replaceAll("http://./", "/")
   return (
     <div className="application">
       <Helmet>
@@ -21,7 +23,7 @@ const Index: React.FC<Props> = props => {
       </Helmet>
       <div
         dangerouslySetInnerHTML={{
-          __html: data.googleDocs.childMarkdownRemark.html,
+          __html: cleanedHtml,
         }}
       />
     </div>

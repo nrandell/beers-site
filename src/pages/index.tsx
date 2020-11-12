@@ -1,6 +1,7 @@
 import { graphql } from "gatsby"
 import React from "react"
 import { Helmet } from "react-helmet"
+import { SEO } from "../components"
 
 interface Props {
   data: {
@@ -18,9 +19,7 @@ const Index: React.FC<Props> = props => {
   const cleanedHtml = html.replace(new RegExp("http://./", "g"), "/")
   return (
     <div className="application">
-      <Helmet>
-        <title>Beers Fitness</title>
-      </Helmet>
+      <SEO title="Home Page" />
       <div
         dangerouslySetInnerHTML={{
           __html: cleanedHtml,

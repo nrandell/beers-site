@@ -1,7 +1,8 @@
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import { SEO } from "../components"
 
-import React from "react"
+import React, { Fragment } from "react"
 
 export default ({
   data: {
@@ -9,16 +10,19 @@ export default ({
   },
 }) => {
   return (
-    <div>
-      <h1>{name}</h1>
-      {cover && (
-        <Img
-          style={{ width: "500px", marginBottom: "2rem" }}
-          fluid={cover.image.childImageSharp.fluid}
-        />
-      )}
-      <div dangerouslySetInnerHTML={{ __html: childMarkdownRemark.html }} />
-    </div>
+    <Fragment>
+      <SEO title={name} />
+      <div>
+        <h1>{name}</h1>
+        {cover && (
+          <Img
+            style={{ width: "500px", marginBottom: "2rem" }}
+            fluid={cover.image.childImageSharp.fluid}
+          />
+        )}
+        <div dangerouslySetInnerHTML={{ __html: childMarkdownRemark.html }} />
+      </div>
+    </Fragment>
   )
 }
 

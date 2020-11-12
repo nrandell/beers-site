@@ -5,9 +5,17 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: "Beers Fitness",
+    titleTemplate: "%s | Beers Fitness",
+    description: "Lockdown fitness with the Beers",
+    url: "https://www.beers.fitness",
+    image: "/static/pp.jpg",
+  },
   /* Your site config here */
   plugins: [
     "gatsby-plugin-sharp",
+    "gatsby-plugin-graphql-codegen",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     {

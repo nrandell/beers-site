@@ -10,7 +10,7 @@ module.exports = {
     titleTemplate: "%s | Beers Fitness",
     description: "Lockdown fitness with the Beers",
     url: "https://www.beers.fitness",
-    image: "/static/pp.jpg",
+    image: "/thebeers.jpg",
   },
   /* Your site config here */
   plugins: [

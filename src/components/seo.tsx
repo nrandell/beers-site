@@ -39,6 +39,8 @@ export const SEO: React.FC<Props> = props => {
       {seo.url && <meta property="og:url" content={seo.url} />}
 
       {article && <meta property="og:type" content="article" />}
+      {!article && <meta property="og:type" content="website" />}
+
       {seo.title && <meta property="og:title" content={seo.title} />}
       {seo.description && (
         <meta property="og:description" content={seo.description} />
@@ -46,10 +48,11 @@ export const SEO: React.FC<Props> = props => {
       {seo.image && <meta property="og:image" content={seo.image} />}
       <meta name="twitter:card" content="summary_large_image" />
       {seo.title && <meta name="twitter:title" content={seo.title} />}
+      {seo.url && <meta name="twitter:url" content={seo.url} />}
       {seo.description && (
-        <meta property="twitter:description" content={seo.description} />
+        <meta name="twitter:description" content={seo.description} />
       )}
-      {seo.image && <meta property="twitter:image" content={seo.image} />}
+      {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
   )
 }

@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "runOptions": {
+        "instanceLimit": 1,
+        "runOn": "folderOpen"
+      },
+      "label": "Launch gatsby",
+      "type": "shell",
+      "command": "yarn",
+      "args": ["start"],
+      "options": { "env": { "ENABLE_GATSBY_REFRESH_ENDPOINT": "1" } },
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "build"
+      }
+    }
+  ]
+}

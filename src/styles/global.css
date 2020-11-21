@@ -16,3 +16,10 @@ h2 {
   font-size: 2rem;
   text-align: center;
 }
+
+.videoGrid {
+  display: grid;
+  grid-gap: 2rem;
+  grid-auto-rows: minmax(150px, auto);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}

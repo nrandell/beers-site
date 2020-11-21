@@ -15,7 +15,6 @@ module.exports = {
   /* Your site config here */
   plugins: [
     "gatsby-plugin-sharp",
-    "gatsby-plugin-graphql-codegen",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     {

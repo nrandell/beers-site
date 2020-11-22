@@ -1,5 +1,8 @@
 import React from "react"
 
+import "bootstrap/dist/css/bootstrap-reboot.css"
+import "../styles/video.css"
+
 interface Props {
   pageContext: { id: string }
 }
@@ -9,9 +12,8 @@ const SingleVideo: React.FC<Props> = props => {
 
   return (
     <iframe
+      className="video_frame"
       src={`https://player.vimeo.com/video/${id}`}
-      width="1024"
-      height="768"
       frameBorder="0"
       allow="autoplay; fullscreen"
       allowFullScreen

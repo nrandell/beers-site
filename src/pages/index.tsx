@@ -1,7 +1,9 @@
 import { graphql } from "gatsby"
 import React from "react"
-import { Helmet } from "react-helmet"
 import { SEO } from "../components"
+
+import "bootstrap/dist/css/bootstrap-reboot.css"
+import "../styles/global.css"
 
 interface Props {
   data: {

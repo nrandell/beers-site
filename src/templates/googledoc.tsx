@@ -4,6 +4,9 @@ import { SEO } from "../components"
 
 import React, { Fragment } from "react"
 
+import "bootstrap/dist/css/bootstrap-reboot.css"
+import "../styles/global.css"
+
 export default ({
   data: {
     googleDocs: { name, cover, childMarkdownRemark },

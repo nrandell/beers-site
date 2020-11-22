@@ -21,5 +21,9 @@ h2 {
   display: grid;
   grid-gap: 2rem;
   grid-auto-rows: minmax(150px, auto);
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.videoGrid img {
+  width: 100%;
 }

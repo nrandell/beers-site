@@ -1,9 +1,6 @@
 import { graphql } from "gatsby"
 import React from "react"
-import { SEO } from "../components"
-
-import "bootstrap/dist/css/bootstrap-reboot.css"
-import "../styles/global.css"
+import { Layout, SEO } from "../components"
 
 interface Props {
   data: {
@@ -20,14 +17,14 @@ const Index: React.FC<Props> = props => {
   const html = data.googleDocs.childMarkdownRemark.html
   const cleanedHtml = html.replace(new RegExp("http://./", "g"), "/")
   return (
-    <div className="application">
+    <Layout>
       <SEO title="Home Page" />
       <div
         dangerouslySetInnerHTML={{
           __html: cleanedHtml,
         }}
       />
-    </div>
+    </Layout>
   )
 }
 

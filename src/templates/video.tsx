@@ -1,8 +1,6 @@
 import React, { Fragment } from "react"
-import { SEO } from "../components"
+import { Layout, SEO } from "../components"
 
-import "bootstrap/dist/css/bootstrap-reboot.css"
-import "../styles/global.css"
 import { CombinedVideoInformation } from "../../config/gatsby-node"
 
 interface Props {
@@ -36,7 +34,7 @@ const Video: React.FC<Props> = props => {
   const { information } = pageContext
 
   return (
-    <Fragment>
+    <Layout>
       <SEO title="Videos" />
       <h1>Videos</h1>
       <p>
@@ -44,7 +42,7 @@ const Video: React.FC<Props> = props => {
         online classes. They are posted here for your pleasure (or pain)
       </p>
       <div className="videoGrid">{information.map(buildVideo)}</div>
-    </Fragment>
+    </Layout>
   )
 }
 

@@ -1,19 +1,34 @@
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
-import { SEO } from "../components"
+import Img, { FluidObject } from "gatsby-image"
+import { Layout, SEO } from "../components"
 
-import React, { Fragment } from "react"
+import React from "react"
 
-import "bootstrap/dist/css/bootstrap-reboot.css"
-import "../styles/global.css"
+interface Props {
+  data: {
+    googleDocs: {
+      name: string
+      cover: {
+        image: {
+          childImageSharp: {
+            fluid: FluidObject
+          }
+        }
+      }
+      childMarkdownRemark: {
+        html: string
+      }
+    }
+  }
+}
 
-export default ({
+const GoogleDoc: React.FC<Props> = ({
   data: {
     googleDocs: { name, cover, childMarkdownRemark },
   },
 }) => {
   return (
-    <Fragment>
+    <Layout>
       <SEO title={name} />
       <div>
         <h1>{name}</h1>
@@ -25,9 +40,11 @@ export default ({
         )}
         <div dangerouslySetInnerHTML={{ __html: childMarkdownRemark.html }} />
       </div>
-    </Fragment>
+    </Layout>
   )
 }
+
+export default GoogleDoc
 
 export const pageQuery = graphql`
   query PageBySlug($path: String!) {

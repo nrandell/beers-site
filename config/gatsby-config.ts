@@ -5,6 +5,11 @@
  */
 
 module.exports = {
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    FAST_REFRESH: true,
+  },
   siteMetadata: {
     title: "Beers Fitness",
     titleTemplate: "%s | Beers Fitness",

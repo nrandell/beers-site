@@ -48,7 +48,7 @@ jobs:
           path: |
             public
             .cache
-        key: ${{ secrets.CACHE_VERSION }}-${{ runner.os }}-gatsby-cache
+          key: ${{ secrets.CACHE_VERSION }}-${{ runner.os }}-gatsby-cache
 
       - name: Install dependencies
         run: yarn install

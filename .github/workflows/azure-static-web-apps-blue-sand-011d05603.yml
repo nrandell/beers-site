@@ -42,16 +42,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Cache gatsby
-        id: gatsby-cache-build
-        uses: actions/cache@v2
-        with:
-          path: |
-            public
-            .cache
-          key: ${{ secrets.CACHE_VERSION }}-${{ runner.os }}-gatsby-build-cache-${{ github.run_id }}
-          restore-keys: |
-            ${{ secrets.CACHE_VERSION }}-${{ runner.os }}-gatsby-build-cache-
+      # - name: Cache gatsby
+      #   id: gatsby-cache-build
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: |
+      #       public
+      #       .cache
+      #     key: ${{ secrets.CACHE_VERSION }}-${{ runner.os }}-gatsby-build-cache-${{ github.run_id }}
+      #     restore-keys: |
+      #       ${{ secrets.CACHE_VERSION }}-${{ runner.os }}-gatsby-build-cache-
 
       - name: Install dependencies
         run: yarn install
@@ -73,22 +73,6 @@ jobs:
     name: Build and Deploy Job
 
     steps:
-      # - name: Checkout
-      #   uses: actions/checkout@v2
-      #   with:
-      #     submodules: true
-
-      # - name: Cache gatsby
-      #   id: restore-gatsby-cache
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: |
-      #       public
-      #       .cache
-      #     key: ${{ secrets.CACHE_VERSION }}-${{ runner.os }}-gatsby-build-cache-${{ github.run_id }}
-      #     restore-keys: |
-      #       ${{ secrets.CACHE_VERSION }}-${{ runner.os }}-gatsby-build-cache-
-
       - name: Download artifacts
         id: download_artifact
         uses: actions/download-artifact@v2
